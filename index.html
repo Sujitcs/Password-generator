@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generate a <br /><span>Random Password</span></h1>
+      <div class="display">
+        <input
+          type="text"
+          name="password"
+          id="password"
+          placeholder="password"
+          readonly
+        />
+        <img src="images/copy.png" onclick="copyPassword()" alt="copy image" />
+      </div>
+
+      <div class="settings">
+        <label for="length"
+          >Password Length: <span id="lengthDisplay">16</span></label
+        >
+        <input
+          type="range"
+          id="lengthSlider"
+          min="4"
+          max="30"
+          value="16"
+          step="1"
+        />
+
+        <div class="checkboxes">
+          <label
+            ><input type="checkbox" id="includeSymbols" checked /> Allow Symbols
+            (!@#$%^&*)</label
+          >
+          <label
+            ><input type="checkbox" id="includeNumbers" checked /> Allow Numbers
+            (0-9)</label
+          >
+          <label
+            ><input type="checkbox" id="includeLowercase" checked /> Allow
+            Lowercase (abc)</label
+          >
+          <label
+            ><input type="checkbox" id="includeUppercase" checked /> Allow
+            Uppercase (ABC)</label
+          >
+          <label
+            ><input type="checkbox" id="excludeDuplicates" /> Exclude Duplicate
+            Characters</label
+          >
+          <label
+            ><input type="checkbox" id="excludeSimilar" /> Exclude Similar
+            Characters (iI1loO0)</label
+          >
+        </div>
+      </div>
+
+      <button onclick="createPassword()">
+        <b>Generate Password</b>
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
